@@ -42,3 +42,38 @@ Incorrect Email
     Fill Credentials   ${user}
     Submit Credentials
     Should Be Type Email 
+
+Login Required Fields 
+   Tags]      Attempt_signup      Req_f_Login
+
+   @{expected_alerts}       Create List 
+   ...                      E-mail obrigatório
+   ...                      Senha obrigatória
+
+   Go To Login Page
+   Submit Credentials
+   Alert Spans Should Be        ${expected_alerts}
+
+Password Required
+   [Tags]      Attempt_signup      Req_f_Login
+    ${user}     Create Dictionary     email=luna@gmail.com      password=
+
+   @{expected_alerts}       Create List 
+   ...                      Senha obrigatória
+
+   Go To Login Page
+   Fill Credentials   ${user}
+   Submit Credentials
+   Alert Spans Should Be        ${expected_alerts}
+
+Email Required
+    [Tags]      Attempt_signup      Req_f_Login
+    ${user}     Create Dictionary     email=                    password=pwd123
+
+   @{expected_alerts}       Create List 
+   ...                      E-mail obrigatório
+
+   Go To Login Page
+   Fill Credentials   ${user}
+   Submit Credentials
+   Alert Spans Should Be        ${expected_alerts}
