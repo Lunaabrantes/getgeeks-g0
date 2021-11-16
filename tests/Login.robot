@@ -9,7 +9,7 @@ Test Teardown   Finish Session
 
 *Test Cases*
 User Login
-    ${user}     Factory User Login
+    ${user}     Factory User    login
 
     Go To Login Page
     Fill Credentials        ${user}
@@ -44,7 +44,7 @@ Incorrect Email
     Should Be Type Email 
 
 Login Required Fields 
-   Tags]      Attempt_signup      Req_f_Login
+   [Tags]      Attempt_signup      Req_f_Login
 
    @{expected_alerts}       Create List 
    ...                      E-mail obrigatório

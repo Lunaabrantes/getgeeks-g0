@@ -32,5 +32,14 @@ Insert User
 
 Users Seed 
 
-    ${user}     Factory User Login
+    ${user}     Factory User    login
     Insert User   ${user}
+    ${user2}    Factory User    be_geek
+    Insert User   ${user2}
+    ${user3}    Factory User    short_description
+    Insert User   ${user3}
+    ${user4}    Factory User    long_description
+    Insert User   ${user4}
+    ${user5}    Factory User    empty_description
+    Insert User   ${user5}
+    

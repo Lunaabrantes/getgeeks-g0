@@ -30,3 +30,8 @@ Alert Spans Should Be
     END
 
     Lists Should Be Equal   ${expected_alerts}      ${got_alerts}
+
+Alert Span Should Be 
+    [Arguments]     ${expect_alert}
+
+    Wait For Elements State     css=span[class=error] >> text=${expect_alert}      visible     5
